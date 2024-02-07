@@ -26,15 +26,19 @@ common = gcp.CommonTemplates()
 templated_files = common.py_library()
 
 # Copy templates for releases
-s.move(
-    templated_files / ".github",
-    excludes=[
-        "CODEOWNERS",
-        "auto-label.yaml",
-        "snippet-bot.yml",
-        "workflows/*",
-    ],
-)
-s.move(templated_files / "MANIFEST.in")
-s.move(templated_files / "setup.cfg")
-s.move(templated_files / ".gitignore")
+# s.move(
+#     templated_files / ".github",
+#     excludes=[
+#         "CODEOWNERS",
+#         "auto-label.yaml",
+#         "snippet-bot.yml",
+#         "workflows/*",
+#     ],
+# )
+# s.move(templated_files / "MANIFEST.in")
+# s.move(templated_files / "setup.cfg")
+# s.move(templated_files / ".gitignore")
+s.move(templated_files / ".kokoro/")
+s.move(templated_files / "noxfile*")
+s.move(templated_files / "docs/")
+s.move(templated_files / "README*")
